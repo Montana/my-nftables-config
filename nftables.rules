@@ -3,7 +3,6 @@
     sudo iptables -F
     sudo iptables -X
     sudo nft flush ruleset && sudo nft -f nftables-init.rules
-    ```
 
 flush ruleset
 
