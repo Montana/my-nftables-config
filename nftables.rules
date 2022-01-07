@@ -1,18 +1,9 @@
-To invoke:
-
-    ```bash
     sudo iptable-save > iptables.backup
     sudo iptables -P INPUT DROP
     sudo iptables -F
     sudo iptables -X
     sudo nft flush ruleset && sudo nft -f nftables-init.rules
     ```
-To get back to your iptables ruleset:
-  
-  ```bash
-  sudo nft flush ruleset
-  sudo iptables-restore < iptables.backup
-  ```
 
 flush ruleset
 
@@ -26,7 +17,8 @@ table nat {
         
         # initiate redirecting on the local machine and redirect incoming 
         # traffic on port 21 to 21212 which is nice for docker for example
-        redirect
+        
+	redirect
         tcp dport 21 redirect to 21212
     }
 
